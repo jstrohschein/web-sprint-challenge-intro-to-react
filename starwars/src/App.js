@@ -1,14 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import axios from 'axios'
+import CharacterCards from './components/CharacterCards'
+import Title from './components/title'
 
 const App = () => {
 
+  const [characters, setCharacters] = useState([])
+
   const effectFn = () => {
     axios
-      .get('https://swapi.dev/api/people/1/')
+      .get('https://swapi.dev/api/people')
       .then(response => {
-        console.log('RESPONSE: ', response)
+        console.log('RESPONSE: ', response.data.results)
+        setCharacters(response.data.results)
       })
       .catch(error => console.log('ERROR: ', error))
   }
@@ -18,7 +23,8 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1 className="Header">Characters</h1>
+      <Title />
+      <CharacterCards data={characters} />
     </div>
   );
 }
