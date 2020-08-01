@@ -30,11 +30,19 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. What is React JS and what problems does it solve? Support your answer with concepts introduced in class and from your personal research on the web.
 
-1. Describe component state.
+  - React JS is a Javascript library used to make responsive, fast, dynamic webpages. Before it, when the state of a dynamic web page changed, the entire DOM would have to reload everytime making interactive webpages sluggish and more of a burden on the host machine/browser. It accomplishes this by using the virtual DOM. The virtual DOM essentially takes a snapshot of the DOM and when a node on it changes, it changes only that/or those nodes.  
 
-1. Describe props.
+2. Describe component state.
 
-1. What are side effects, and how do you sync effects in a React component to changes of certain state or props?
+  When a component is first declared, it is set to a state via the useState hook. That state is then monitored by React in the virtual DOM. When that state is changed, the web page 'reacts' to the change and updates the DOM to represent that change. 
+
+3. Describe props.
+
+  Essentially, props are parameters that are passed from one component to another via the component declaration in the JSX. However, unlike most normal function parameters, props are objects that are referenced using dot notation (unless otherwise specified by object deconstruction, etc.) Props are a way of making state changes 'cascade' down the DOM so that data changes at the top of the DOM can also effect changes anywhere below. 
+
+4. What are side effects, and how do you sync effects in a React component to changes of certain state or props?
+
+  Side effects are unpredictable or uncontrollable things that may happen in the code that could render the code or website inoperable. To handle these, we use the useEffect react hook. useEffect puts the unpredictable segment of cade inside a function that, when called, is actually put in a 'queue' while the rest of the component or code is rendered. When the component is fully rendered (minus the effect func) the effect func is then ran. However, we may not want the effect func to be ran every time that the component is changed through a state change, so a dependency array is used inside the effect func that limits the call of the func to only specified changes in the state. 
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
