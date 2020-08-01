@@ -1,6 +1,8 @@
 // Write your Character component here
 import React, { useState } from 'react'
 import { Card, CardTitle, CardText, Col, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import styled from "styled-components";
+
 
 
 
@@ -17,10 +19,13 @@ const CharacterCard = (props) => {
   const height = () => setInfo(prevInfo => props.info.height)
   const gender = () => setInfo(prevInfo => props.info.gender)
 
+  const Wrapper = styled.section`
+  padding: 2rem;
+`;
 
   return (
 
-
+    //<Wrapper> same hook issue from title
     <Col lg="6">
       <Card body>
         <CardTitle>{props.info.name}</CardTitle>
@@ -38,6 +43,7 @@ const CharacterCard = (props) => {
         </Dropdown>
       </Card>
     </Col>
+    //</Wrapper> same hook issue
 
   )
 }
