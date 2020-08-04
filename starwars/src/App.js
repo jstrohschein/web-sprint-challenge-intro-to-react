@@ -8,6 +8,8 @@ const App = () => {
 
   const [characters, setCharacters] = useState([])
 
+
+
   const effectFn = () => {
     axios
       .get('https://swapi.dev/api/people')

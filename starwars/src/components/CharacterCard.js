@@ -25,25 +25,25 @@ const CharacterCard = (props) => {
 
   return (
 
-    //<Wrapper> same hook issue from title
-    <Col lg="6">
-      <Card body>
-        <CardTitle>{props.info.name}</CardTitle>
-        <CardText>{info}</CardText>
-        <Dropdown isOpen={dropdownOpen} toggle={toggle}>
-          <DropdownToggle caret>
-            Character Info
+    <Wrapper>
+      <Col lg="6">
+        <Card className='card' body>
+          <CardTitle>{props.info.name}</CardTitle>
+          <CardText>{info}</CardText>
+          <Dropdown isOpen={dropdownOpen} toggle={toggle}>
+            <DropdownToggle caret>
+              Character Info
         </DropdownToggle>
-          <DropdownMenu>
-            <DropdownItem onClick={eyeColor}>Eye Color</DropdownItem>
-            <DropdownItem onClick={hairColor}>Hair Color</DropdownItem>
-            <DropdownItem onClick={height}>Height</DropdownItem>
-            <DropdownItem onClick={gender}>Gender</DropdownItem>
-          </DropdownMenu>
-        </Dropdown>
-      </Card>
-    </Col>
-    //</Wrapper> same hook issue
+            <DropdownMenu>
+              <DropdownItem onClick={eyeColor}>Eye Color</DropdownItem>
+              <DropdownItem onClick={hairColor}>Hair Color</DropdownItem>
+              <DropdownItem onClick={height}>Height</DropdownItem>
+              <DropdownItem onClick={gender}>Gender</DropdownItem>
+            </DropdownMenu>
+          </Dropdown>
+        </Card>
+      </Col>
+    </Wrapper>
 
   )
 }
